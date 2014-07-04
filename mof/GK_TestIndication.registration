@@ -1,0 +1,3 @@
+# Classname Namespace ProviderName ProviderModule ProviderTypes ...
+GK_Test root/cimv2 GK_Test cmpiGKTest instance method
+GK_TestModification root/cimv2 GK_Test cmpiGKTest indication

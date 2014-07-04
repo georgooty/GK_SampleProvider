@@ -1,0 +1,64 @@
+
+//
+// GK_Test.mof
+//
+// (C) Copyright NeST
+//
+// THIS FILE IS PROVIDED UNDER THE TERMS OF THE ECLIPSE PUBLIC LICENSE
+// ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THIS FILE
+// CONSTITUTES RECIPIENTS ACCEPTANCE OF THE AGREEMENT.
+//
+// You can obtain a current copy of the Eclipse Public License from
+// http://www.opensource.org/licenses/eclipse-1.0.php
+//
+// Author:       George Varghese <georgooty@gmail.com>
+// Contributors:
+//
+// Description:
+// CIM Indication classes for Linux Base System Instrumentation
+//
+
+#pragma locale ("en_US")
+
+// -------------------------------------------------------------------
+// *******************************************************************
+// 	Classes
+// *******************************************************************
+// -------------------------------------------------------------------
+
+// ===================================================================
+// 	GK_Test
+// ===================================================================
+
+[ Description("Class representing GK_Test"),
+  Provider("cmpi:cmpiGK_Test")
+]
+class GK_Test:CIM_LogicalElement
+{
+	[Key, Description("This property is used to read the unique key id")]
+	string InstanceID;
+	
+	[Description("This property is used to Enable/Disable the ")]
+	boolean Enabled;
+	
+	[Description("This property is uset to change the setting")]
+	uint16 Setting;
+	
+	
+	[Description("This method is used to change the tsetting")]
+	uint32 SetSetting([IN] string Setting);
+};
+
+
+// ===================================================================
+// 	GK_TestIndication
+// ===================================================================
+[ Indication,
+  Description ("Metric Process Indication"),
+  Provider("cmpi:cmpiGK_Test")
+]
+class GK_TestModification : CIM_InstModification
+{
+  
+};
+
