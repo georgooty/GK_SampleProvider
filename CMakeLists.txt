@@ -22,6 +22,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_P
 find_package(PkgConfig)
 find_package(CMPI REQUIRED)
 find_package(KonkretCMPI REQUIRED)
+find_package(sblim-indication_helper REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(mof)
