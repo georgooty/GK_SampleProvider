@@ -372,8 +372,8 @@ CMPIStatus GK_TestInvokeMethod( CMPIMethodMI * mi,
   CMPIStatus   rc    = {CMPI_RC_OK, NULL};
   CMPIData     incmd;
   CMPIValue    valrc; 
-  int regval=-1;
-  int retVal, rValue,gValue,bValue;
+
+  int retVal;
   const char* parms;
   CMPIString         * instanceId  = NULL;
 
@@ -482,8 +482,7 @@ static CMPIInstance * _makeInst_GK_Test( CMPIObjectPath * ref,
 				 CMPIStatus * rc) {
   CMPIObjectPath * op     = NULL;
   CMPIInstance   * ci     = NULL;
-  unsigned short   status = 2;       /* Enabled */
-  char regVal[25] = "";
+   char regVal[25] = "";
   char instance_name[100] = {0};
   int retVal= -1;
   CMPIValue       val;
@@ -833,7 +832,7 @@ CMPIStatus GK_TestAuthorizeFilter(
 
   printf("--- %s CMPI AuthorizeFilter() exited\n",_ClassName);
 
-  exit:
+
   CMReturn(CMPI_RC_OK);
 }
 

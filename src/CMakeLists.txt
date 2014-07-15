@@ -33,6 +33,6 @@ target_link_libraries(${LIBRARY_NAME} ind_helper)
 
 
 # Create registration file
-#cim_registration(${PROVIDER_NAME} ${LIBRARY_NAME} ${MOF} share/openlmi-providers)
+#cim_registration(${PROVIDER_NAME} ${LIBRARY_NAME} ${MOF} /var/lib)
 
-#install(TARGETS ${LIBRARY_NAME} DESTINATION /usr/lib${LIB_SUFFIX}/cmpi/)
+install(TARGETS ${LIBRARY_NAME} DESTINATION /usr/local/lib${LIB_SUFFIX}/cmpi/)
