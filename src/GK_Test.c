@@ -138,7 +138,8 @@ CMPIStatus GK_TestEnumInstances( CMPIInstanceMI * mi,
 
   ci = _makeInst_GK_Test( ref, &rc );
 
-  if( ci == NULL) {
+  if( ci == NULL)
+  {
     CMSetStatusWithChars(_broker, &rc, CMPI_RC_ERR_FAILED,
                                                  "Couldn't build instance");
 	goto exit;
@@ -178,14 +179,16 @@ CMPIStatus GK_TestGetInstance( CMPIInstanceMI * mi,
 	printf("--- %s CMPI GetInstance() called",_ClassName);
 
 	instanceId  = CMGetKey( cop, "InstanceID", &rc).value.string;
-	if( instanceId  == NULL ) {    
+	if( instanceId  == NULL ) 
+  {    
 		CMSetStatusWithChars( _broker, &rc, 
 					CMPI_RC_ERR_NOT_FOUND, "Could not get InstanceID." ); 
    
    goto exit;
   }
 
-   if ( strcmp(CMGetCharPtr(instanceId),_InstanceID) != 0){
+   if ( strcmp(CMGetCharPtr(instanceId),_InstanceID) != 0)
+   {
       CMSetStatusWithChars( _broker, &rc,
                             CMPI_RC_ERR_NOT_FOUND, "This class name does not exist (wrong InstanceID)." );
 
